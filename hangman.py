@@ -15,5 +15,22 @@ with open("./words/medium.json") as json_file:
 with open("./words/hard.json") as json_file:
     hard_words = json.load(json_file)
 
+game_mode = "easy"
+
 greeting_message = "Hello, welcome to hangman! What game level will you like to play? \n > Easy \n > Medium \n > Hard"
 print(greeting_message)
+
+def playGame():
+    print("Playing game mode: " + game_mode)
+
+user_input = input("")
+if user_input.lower() == "easy":
+    playGame()
+elif user_input.lower() == "medium":
+    game_mode = "medium"
+    playGame()
+elif user_input.lower() == "hard":
+    game_mode = "hard"
+    playGame()
+else:
+    print("command not understood")
